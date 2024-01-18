@@ -30,6 +30,6 @@ void _div(stack_t **stack, unsigned int row_cnt)
 	}
 
 	value = ((*stack)->next->n) / ((*stack)->n);
-	pop(stack, row_cnt);/*For the top node*/
-	(*stack)->n = val;
+	pop(stack, row_cnt);
+	(*stack)->n = value;
 }
