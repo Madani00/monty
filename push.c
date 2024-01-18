@@ -5,13 +5,11 @@
 #include <string.h>
 
 /**
- * push - Add the element to the stack.
- * @stack: stack given by main
- * @row_cnt: Row counter
- *
- * Return: void
+ * push - Adds element ----->  stack
+ * @stack: stack
+ * @row_cnt: counter
+ * Return: Nothing
  */
-int is_digit(char *string);
 
 void push(stack_t **stack, unsigned int row_cnt)
 {
@@ -25,8 +23,6 @@ void push(stack_t **stack, unsigned int row_cnt)
 		exit(EXIT_FAILURE);
 
 	}
-
-
 	if (global.data_struct == 1)
 	{
 
@@ -34,7 +30,6 @@ void push(stack_t **stack, unsigned int row_cnt)
 		{
 
 			exit(EXIT_FAILURE);
-
 		}
 	}
 	else
@@ -43,7 +38,6 @@ void push(stack_t **stack, unsigned int row_cnt)
 		{
 
 			exit(EXIT_FAILURE);
-
 		}
 	}
 }

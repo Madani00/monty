@@ -1,16 +1,14 @@
 #include "monty.h"
 
 /**
- * @stack: stack provided by the main function start.c
- * @row_cnt: number of row
- * pall - display the stack
+ * pall - display the values of the stack
+ * @stack: stack
+ * @row_cnt: the counter
  *
- * Return: void
+ * Return: Nothing
  */
 
 void pall(stack_t **stack, unsigned int row_cnt __attribute__((unused)))
 {
-	/*  display the stack */
 	print_stack(*stack);
-
 }

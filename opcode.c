@@ -4,19 +4,18 @@
 #include "./monty.h"
 
 /**
- * opcode - function in charge of running builtins
- * @stack: stack given by main
+ * opcode - function
+ * @stack: stack
  * @str: string to compare
- * @row_cnt: row counter
+ * @row_cnt: the counter
  *
  * Return: nothing
  */
+
 void opcode(stack_t **stack, char *str, unsigned int row_cnt)
 {
+	instruction_t op[] = INSTRUCTIONS;
 
-
-	instruction_t op[] = INSTRUCTIONS;	
-	
 	int ii = 0;
 
 	if (!strcmp(str, "stack"))
@@ -24,19 +23,17 @@ void opcode(stack_t **stack, char *str, unsigned int row_cnt)
 		global.data_struct = 1;
 		return;
 	}
-
 	if (!strcmp(str, "queue"))
 	{
 		global.data_struct = 0;
 		return;
 	}
-
 	while (op[ii].opcode)
 	{
 		if (strcmp(op[ii].opcode, str) == 0)
 		{
 			op[ii].f(stack, row_cnt);
-			return; 
+			return;
 		}
 		ii++;
 	}

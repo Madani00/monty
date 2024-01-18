@@ -5,26 +5,23 @@
 #include "monty.h"
 
 /**
- * _sub -  substracts the first two nodes of the stack
- * @stack: stack given by main
- * @row_cnt: row counter
+ * _sub -  substracts nodes
+ * @stack: stack
+ * @row_cnt: counter
  *
- * Return: void
+ * Return: Nothing
  */
 void _sub(stack_t **stack, unsigned int row_cnt)
 {
-	int val;
+	int value;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		/* Can't sub, stack too short */
 		fprintf(stderr, "L%d: can't sub, stack too short\n", row_cnt);
 		exit(EXIT_FAILURE);
-
 	}
 
-	val = ((*stack)->next->n) - ((*stack)->n);
-	/*is top node*/
+	value = ((*stack)->next->n) - ((*stack)->n);
 	pop(stack, row_cnt);
-	(*stack)->n = val;
+	(*stack)->n = value;
 }

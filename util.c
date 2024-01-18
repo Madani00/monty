@@ -2,10 +2,9 @@
 #include "monty.h"
 
 /**
- * @string: string to check
-  * is_digit - valid is a string a digit
- *
- * Return: 0 if error else 1 is success
+ * is_digit - check is a string is a digit
+ * @string: string
+ * Return: 0 if error, 1 is success
  */
 int is_digit(char *string)
 {
@@ -21,17 +20,13 @@ int is_digit(char *string)
 			return (0);
 		string++;
 	}
-
 	return (1);
 }
-
 /**
  * isnumber - checks if a string is a number
- * @str: provided string
- *
+ * @str: string
  * Return: 1 if the string is a number, else, 0.
  */
-
 int isnumber(char *str)
 {
 	int ii;

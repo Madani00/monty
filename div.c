@@ -5,15 +5,16 @@
 #include "monty.h"
 
 /**
- * _div - divides the next higher value by the upper value
- * @stack: stack ( by hand )
- * @row_cnt: Row counter
+ * _div - divides
+ * @stack: stack provided
+ * @row_cnt: the counter
  *
- * Return: void
+ * Return: Nothing
  */
+
 void _div(stack_t **stack, unsigned int row_cnt)
 {
-	int val;
+	int value;
 
 	if (!((*stack)->next) || !stack || !*stack)
 	{
@@ -28,7 +29,7 @@ void _div(stack_t **stack, unsigned int row_cnt)
 		return;
 	}
 
-	val = ((*stack)->next->n) / ((*stack)->n);
+	value = ((*stack)->next->n) / ((*stack)->n);
 	pop(stack, row_cnt);/*For the top node*/
 	(*stack)->n = val;
 }

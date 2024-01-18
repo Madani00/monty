@@ -7,15 +7,13 @@
 void file_error(char *argv);
 void error_usage(void);
 int status = 0;
-
-
 /**
  * main - entry point
- * @argv: list of arguments passed to our program
- * @argc: amount of args
- *
- * Return: nothing
+ * @argv: arguments
+ * @argc: number of argv
+ * Return: Nothing
  */
+
 int main(int argc, char **argv)
 {
 	FILE *file;
@@ -25,14 +23,14 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	unsigned int line_cnt = 1;
 
-	global.data_struct = 1;  /* struct defined in monty.h L58*/
+	global.data_struct = 1;
 	if (argc != 2)
-		error_usage(); /* def in line 82 */
+		error_usage();
 
 	file = fopen(argv[1], "r");
 
 	if (!file)
-		file_error(argv[1]);  /* def in line 68 */
+		file_error(argv[1]);
 
 	while ((getline(&buffer, &buf_len, file)) != (-1))
 	{
@@ -60,23 +58,21 @@ int main(int argc, char **argv)
 }
 
 /**
- * error_usage - Displays a usage message and terminates.
- * a single argument to your program
+ * error_usage - Displays a usage message
  *
- * Return: nothing
+ * Return: NOthing
  */
+
 void error_usage(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
-
 /**
- * file_error - Displays a file error message and terminates.
+ * file_error - display a file error
  * @argv: Command-line arguments provided by the main() function.
  *
- * Desc: Print a message if it's not possible to open the file.
  * Return: nothing
  */
 
