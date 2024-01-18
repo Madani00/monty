@@ -13,6 +13,10 @@
 		    {"swap", swap},   \
 		    {"nop", nop},     \
 		    {"add", _add},    \
+		    {"sub", _sub},    \
+		    {"div", _div},    \
+		    {"mul", _mul},    \
+		    {"mod", mod},    \
 		{                     \
 			NULL, NULL      \
 		}                     \
@@ -74,6 +78,10 @@ void pint(stack_t **stack, unsigned int line_cnt);
 void swap(stack_t **stack, unsigned int line_cnt);
 void pop(stack_t **stack, unsigned int line_cnt);
 void nop(stack_t **stack, unsigned int line_cnt);
+void _div(stack_t **stack, unsigned int row_cnt);
+void _sub(stack_t **stack, unsigned int row_cnt);
+void _mul(stack_t **stack, unsigned int row_cnt);
+void mod(stack_t **stack, unsigned int row_cnt);
 
 void _add(stack_t **stack, unsigned int line_cnt);
 void opcode(stack_t **stack, char *str, unsigned int line_cnt);
